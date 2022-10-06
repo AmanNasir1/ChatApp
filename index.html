@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link href="sweetalert2.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="registrationForm hidden" id="registrationForm">
+            <div class="heading">
+                <h2> ChatApp By <br> Aman Ahmed Nasir</h2>
+            </div>
+            <div class="form">
+                <div class="header">
+                    <h2>Register</h2>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="username">User Name:</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="username" id="username">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="registrationEmail">Email:</label>
+                    </div>
+                    <div class="input">
+                        <input type="email" name="registrationEmail" id="registrationEmail">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="PhoneNumber">Phone Number:</label>
+                    </div>
+                    <div class="input">
+                        <input type="number" name="PhoneNumber" id="PhoneNumber">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="registrationPassword">Password:</label>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="registrationPassword" id="registrationPassword">
+                    </div>
+
+                </div>
+                <div class="signupbtn">
+                    <button id="signup-btn" class="btn">Sign Up</button>
+                </div>
+                <div class="link">
+                    <p>Already have account <a class="linkAnchor" id="linklogin">Login</a></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="loginForm " id="loginForm">
+            <div class="heading">
+                <h2>ChatApp By <br> Aman Ahmed Nasir</h2>
+            </div>
+            <div class="loginInput form">
+                <div class="header">
+                    <h2>Login</h2>
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="loginEmail">Email:</label>
+                    </div>
+                    <div class="input">
+                        <input type="email" name="loginEmail" id="loginEmail">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="label">
+                        <label for="loginPassword">Password:</label>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="loginPassword" id="loginPassword">
+                    </div>
+
+                </div>
+                <div class="loginbtn">
+                    <button id="login-btn" class="btn">Log In</button>
+                </div>
+                <div class="link">
+                    <p>Don't have an account? <a class="linkAnchor" id="linkRegister">Register</a></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>
