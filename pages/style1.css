@@ -145,7 +145,7 @@ input[type="text"] {
     transform: scale(1.04);
 }
 .sendMessage button{
-    width: 100px;
+    width: 10%;
     height: 5vh;
     border-radius: 5px;
     outline: none;

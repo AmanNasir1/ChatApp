@@ -81,30 +81,40 @@ login.addEventListener("click", () => {
         });
 })
 
-window.onload = async () => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            if (!user.emailVerified) {
-                sendEmailVerification(auth.currentUser)
-                    .then(() => {
-                        Swal.fire({
-                            title: 'Email Verification',
-                            text: 'Please Verify Your Email',
-                            icon: 'info',
-                            confirmButtonText: 'Reload'
-                        });
-                    }
+// window.onload = async () => {
+//     const auth = getAuth();
+//     onAuthStateChanged(auth, (user) => {
+//         if (user) {
+//             if (!user.emailVerified) {
+//                 sendEmailVerification(auth.currentUser)
+//                     .then(() => {
+//                         Swal.fire({
+//                             title: 'Email Verification',
+//                             text: 'Please Verify Your Email',
+//                             icon: 'info',
+//                             confirmButtonText: 'Reload'
+//                         });
+//                     })
+//             };
+//             getUserFromDatabase(user.uid);
+           
+//         }
+//         else {
+//             console.log("user not found")
+//         };
+//     })
+// }
 
-                    )
-            }
-            else {
-                const uid = user.uid;
-                console.log(user)
-            };
-        }
-        else {
-            console.log("user not found")
-        };
-    })
-}
+// const getUserFromDatabase = async (uid) => {
+//     const docRef = doc(db, "users", uid);
+//     const docSnap = await getDoc(docRef);
+//     let currentUser = document.getElementById("current-user");
+//     currentUser.innerHTML = `${docSnap.data().name} (${docSnap.data().email})`;
+
+//     if (docSnap.exists()) {
+//         console.log("Document data:", docSnap.data());
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }
