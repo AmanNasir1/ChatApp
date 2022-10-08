@@ -21,8 +21,7 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    onAuthStateChanged,
-    sendEmailVerification
+
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import {
     getFirestore,
@@ -30,12 +29,12 @@ import {
     setDoc
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 const firebaseConfig = {
-    apiKey: "AIzaSyCC2KqPAq6VlzonPGcDVGdVwgiI8aJM0Z0",
-    authDomain: "loginformbyaman.firebaseapp.com",
-    projectId: "loginformbyaman",
-    storageBucket: "loginformbyaman.appspot.com",
-    messagingSenderId: "416757372630",
-    appId: "1:416757372630:web:c208606b3ec0ffe76b9b77"
+    apiKey: "AIzaSyB2VuQMwI0Fb4jAcHOF2RxMVXGvbpTbRgQ",
+    authDomain: "chatappbyaman.firebaseapp.com",
+    projectId: "chatappbyaman",
+    storageBucket: "chatappbyaman.appspot.com",
+    messagingSenderId: "891991461524",
+    appId: "1:891991461524:web:d4937d8355a3624adbee81"
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -51,6 +50,11 @@ signup.addEventListener("click", () => {
         .then(async (userCredential) => {
             const uid = userCredential.user.uid;
             console.log("signup", userCredential.user)
+            Swal.fire(
+                'Successfully Signup',
+                'That thing is still around?',
+                'success'
+            )
             let firstdoc = doc(db, "users", uid);
             await setDoc(firstdoc, {
                 name: username.value,
@@ -81,40 +85,3 @@ login.addEventListener("click", () => {
         });
 })
 
-// window.onload = async () => {
-//     const auth = getAuth();
-//     onAuthStateChanged(auth, (user) => {
-//         if (user) {
-//             if (!user.emailVerified) {
-//                 sendEmailVerification(auth.currentUser)
-//                     .then(() => {
-//                         Swal.fire({
-//                             title: 'Email Verification',
-//                             text: 'Please Verify Your Email',
-//                             icon: 'info',
-//                             confirmButtonText: 'Reload'
-//                         });
-//                     })
-//             };
-//             getUserFromDatabase(user.uid);
-           
-//         }
-//         else {
-//             console.log("user not found")
-//         };
-//     })
-// }
-
-// const getUserFromDatabase = async (uid) => {
-//     const docRef = doc(db, "users", uid);
-//     const docSnap = await getDoc(docRef);
-//     let currentUser = document.getElementById("current-user");
-//     currentUser.innerHTML = `${docSnap.data().name} (${docSnap.data().email})`;
-
-//     if (docSnap.exists()) {
-//         console.log("Document data:", docSnap.data());
-//     } else {
-//         // doc.data() will be undefined in this case
-//         console.log("No such document!");
-//     }
-// }

@@ -45,7 +45,6 @@ body {
     height: 100%;
     background-color: whitesmoke;
     border-right: 4px solid #8E0E00;
-    /* background-color: black; */
     border-radius: 10px;
 }
 
@@ -78,7 +77,6 @@ body {
 }
 
 .message {
-    /* background-color: #1F1C18; */
     height: 78vh;
 }
 
@@ -104,8 +102,6 @@ body {
 h4 {
     font-size: 25px;
     padding: 0 10px
-        /* height: 50px; */
-        /* background-color: red; */
 }
 
 ;
@@ -116,7 +112,7 @@ h4 {
     position: relative;
 }
 
-input[type="text"] {
+#message {
     width: 88%;
     height: 5vh;
     margin: 7px 0 7px 2px;
@@ -125,11 +121,13 @@ input[type="text"] {
     font-size: 16px;
 
 }
-.test{
+
+.test {
     display: flex;
     justify-content: space-between;
 }
-.test button{
+
+.test button {
     background-image: linear-gradient(to right, #8E0E00, #1F1C18);
     border-radius: 10px;
     width: 100px;
@@ -140,11 +138,13 @@ input[type="text"] {
     cursor: pointer;
     transition: all;
 }
-.test button:hover{
+
+.test button:hover {
     transition-duration: 0.5s;
     transform: scale(1.04);
 }
-.sendMessage button{
+
+.sendMessage button {
     width: 10%;
     height: 5vh;
     border-radius: 5px;
@@ -155,10 +155,31 @@ input[type="text"] {
     color: white;
     cursor: pointer;
     transition: all;
-    
+
 
 }
-.sendMessage button:hover{
+
+.sendMessage button:hover {
     transition-duration: 0.5s;
     transform: scale(1.02);
+}
+
+#chat-btn {
+    float: right;
+    margin: 2px 0;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+}
+
+#chat-btn:hover {
+    transition-duration: 0.5s;
+    transform: scale(1.02);
+
+
 }

@@ -14,12 +14,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCC2KqPAq6VlzonPGcDVGdVwgiI8aJM0Z0",
-    authDomain: "loginformbyaman.firebaseapp.com",
-    projectId: "loginformbyaman",
-    storageBucket: "loginformbyaman.appspot.com",
-    messagingSenderId: "416757372630",
-    appId: "1:416757372630:web:c208606b3ec0ffe76b9b77"
+    apiKey: "AIzaSyB2VuQMwI0Fb4jAcHOF2RxMVXGvbpTbRgQ",
+    authDomain: "chatappbyaman.firebaseapp.com",
+    projectId: "chatappbyaman",
+    storageBucket: "chatappbyaman.appspot.com",
+    messagingSenderId: "891991461524",
+    appId: "1:891991461524:web:d4937d8355a3624adbee81"
 };
 import {
     getAuth,
@@ -133,7 +133,7 @@ const loadAllChats = (chatID, currentId) => {
         const q = query(
             collection(db, "messages"),
             where("chat_id", "==", chatID),
-            orderBy("timestamp", "asc")
+            // orderBy("timestamp", "desc")
         );
         let allMessages = document.getElementById("messages");
         unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -141,8 +141,7 @@ const loadAllChats = (chatID, currentId) => {
             querySnapshot.forEach((doc) => {
                 let className =
                     doc.data().sender_id === currentId ? "my-message" : "user-message";
-                allMessages.innerHTML += `<li class="${className}">${doc.data().sender_name
-                    }: ${doc.data().message}</li>`;
+                allMessages.innerHTML += `<li class="${className}"> ${doc.data().message}</li>`;
             });
         });
     } catch (err) {
